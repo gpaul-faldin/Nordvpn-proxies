@@ -1,0 +1,38 @@
+version: '3'
+services:
+  web:
+    image: proxy-handler
+    container_name: proxy-handler
+    ports:
+      - '3000:3000'
+    networks:
+      - proxy-network
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      - vpn1
+      - vpn2
+
+  vpn1:
+    image: nordvpn
+    container_name: vpn1
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - NORDVPN_TOKEN=<YOUR NORDVPN TOKEN HERE>
+    networks:
+      - proxy-network
+
+  vpn2:
+    image: nordvpn
+    container_name: vpn2
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - NORDVPN_TOKEN=<YOUR NORDVPN TOKEN HERE>
+    networks:
+      - proxy-network
+
+networks:
+  proxy-network:
+    name: proxy-network
