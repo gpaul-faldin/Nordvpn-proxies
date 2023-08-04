@@ -30,9 +30,9 @@ The Nordvpn-Proxies API exposes two endpoints:
 
 **Endpoint:** `http://localhost:3000/?url=<url>`
 
-**Method:** `GET/POST/PUT...`
+**Method:** `POST`
 
-**Body (for POST/PUT/... methods):**
+**Body:**
 ```json
 {
   "method": "<http method>",
