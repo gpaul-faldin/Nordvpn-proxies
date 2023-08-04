@@ -1,7 +1,3 @@
-Sure, here is a more detailed and organized version of your `README.md`:
-
----
-
 # Nordvpn-Proxies
 
 Nordvpn-Proxies is an all-in-one solution for creating rotating proxies using a Nordvpn account.
