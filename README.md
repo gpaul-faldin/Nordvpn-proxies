@@ -9,6 +9,7 @@ Designed with efficiency at its core, **Nordvpn-Proxies** abstracts the intricac
 🛠 **Features:**
 - **Rotating Proxies:** Transition smoothly between diverse Nordvpn connections.
 - **Intuitive API:** Propel your requests without entangling in proxy configurations.
+- **Enhanced Feedback:** Additional response headers to gain insights on the proxy being used.
 - **Tailorable:** Shape specific Nordvpn connection attributes in line with your requirements.
 
 ## 📋 Prerequisites
@@ -55,6 +56,10 @@ Or, delve into a manual setup:
   }
 }
 ```
+- **Response Headers**:
+  - `vpn-container`: Name of the currently used VPN container.
+  - `vpn-ip`: External IP of the latest VPN connection.
+
 💡 Channel the specified HTTP method towards the target URL using this endpoint.
 
 ### 2. Recreate Endpoint
