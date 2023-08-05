@@ -67,4 +67,8 @@ Or, delve into a manual setup:
 - **Endpoint:** `http://localhost:3000/recreate`
 - **Method:** `POST`
 
+- **Response Headers**:
+  - `vpn-container`: Name of the rotated VPN container.
+  - `vpn-ip`: External IP of the rotated VPN connection.
+
 💡 Pivot to a fresh proxy and interchange the connection via this endpoint. No request body requisition.
