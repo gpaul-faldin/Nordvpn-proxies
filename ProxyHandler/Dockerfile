@@ -16,6 +16,10 @@ RUN npm install
 # Copy the rest of the application code
 COPY . /usr/src/app
 
+# Export env variables
+ARG CONNECT_OPTION
+ENV CONNECT_OPTION=$CONNECT_OPTION
+
 # Expose port for application
 EXPOSE 3000
 

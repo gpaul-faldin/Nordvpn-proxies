@@ -1,53 +1,56 @@
-# Nordvpn-Proxies
+# Nordvpn-Proxies 🌐
 
-Nordvpn-Proxies is an all-in-one solution for creating rotating proxies using a Nordvpn account.
+**Nordvpn-Proxies** is an integrated solution for creating rotating proxies leveraging a Nordvpn account.
 
-## Prerequisites
+## 📋 Prerequisites
 
-Before you get started, you will need to have your Nordvpn key. This key can be set as an environment variable, or it can be set manually inside the ProxyHandler
+- You'll need your **Nordvpn key**:
+  - Set it as an environment variable
+  - Alternatively, define it directly inside the `start.sh` file (line 44).
+  
+- Set the **CONNECT_OPTION** environment variable:
+  - This acts as the argument to the `nordvpn connect` function.
+  - Alternatively, define it directly inside the `start.sh` file (line 45).
 
-You also need to set you Nordvpn key inside the docker-compose.yml
+## 🚀 Getting Started
 
-## Getting Started
+For a quick setup, simply run:
+```bash
+bash start.sh
+```
 
-1. **Build Docker Images:** Use the provided script to build the Docker images for the project. Run this script from the root of the project directory:
+### Manual Setup:
 
+1. **Build Docker Images:** Utilize the included script to construct the Docker images for the project:
     ```bash
     ./build_images.sh
     ```
 
-2. **Start Services:** After the images have been built, start all services with the following command:
-
+2. **Fire up the Services:** Once the images are ready, you can initiate all services:
     ```bash
     docker-compose up
     ```
 
-## API
+## 📡 API
 
-The Nordvpn-Proxies API exposes two endpoints:
+### 1. Proxy Endpoint
 
-### Proxy Endpoint
-
-**Endpoint:** `http://localhost:3000/?url=<url>`
-
-**Method:** `POST`
-
-**Body:**
+- **Endpoint:** `http://localhost:3000/?url=<URL>`
+- **Method:** `POST`
+- **Body:**
 ```json
 {
-  "method": "<http method>",
+  "method": "<HTTP_METHOD>",
   "data": {
-    // Optional request body for POST/PUT methods
+    // Additional data for POST/PUT methods if needed
   }
 }
 ```
+💡 Use this endpoint to proxy the chosen HTTP method to the desired URL.
 
-**Description:** This endpoint proxies the specified HTTP method to the specified URL.
+### 2. Recreate Endpoint
 
-### Recreate Endpoint
+- **Endpoint:** `http://localhost:3000/recreate`
+- **Method:** `POST`
 
-**Endpoint:** `http://localhost:3000/recreate`
-
-**Method:** `POST`
-
-**Description:** This endpoint rotates the current proxy and switches the connection to the other one. No request body is required.
+💡 Rotate your current proxy and switch the connection using this endpoint. No request body is necessary.

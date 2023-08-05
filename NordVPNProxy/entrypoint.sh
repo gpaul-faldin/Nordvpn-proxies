@@ -1,7 +1,7 @@
 #!/bin/bash
 # Start the NordVPN daemon
 service nordvpn start
-sleep 5
+sleep 10
 
 # Login to your NordVPN account
 nordvpn login --token $NORDVPN_TOKEN

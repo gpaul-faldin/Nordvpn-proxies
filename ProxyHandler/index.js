@@ -12,25 +12,7 @@ const servers = [
 ]
 var index = 0;
 
-app.get('/health', async (req, res) => {
-  console.log("TEST")
-  try {
-    const resp = await axios({
-      method: 'POST',
-      url: `http://${servers[index]}:3000`,
-    })
-    return res.send(resp.data);
-  } catch (error) {
-    res.send({
-      service: 'handler',
-      error: error.message,
-    })
-  }
-})
-
 app.post('/', async (req, res) => {
-
-  console.log("Request received")
 
   try {
     const resp = await axios({
@@ -52,34 +34,39 @@ app.post('/recreate', async (req, res) => {
   try {
     const containers = await docker.listContainers({ all: true, filters: { name: [servers[index]] } });
 
-    if (containers.length > 0) {
-      const existingContainer = docker.getContainer(containers[0].Id);
-      await existingContainer.stop();
-      await existingContainer.remove();
-    }
-
-    const newContainer = await docker.createContainer({
-      name: servers[index],
-      Image: 'nordvpn',
-      HostConfig: {
-        CapAdd: ['NET_ADMIN'],
-        NetworkMode: 'proxy-network'
-      },
-      Env: [`NORDVPN_TOKEN=${process.env.NORDVPN_TOKEN}`],
-    });
-
-
-    await newContainer.start();
-
     // Toggle the index between 0 and 1
     index = (index + 1) % 2;
 
-    res.send('Container recreated successfully!');
+    if (containers.length === 0) {
+      return res.status(500).send('Container not found');
+    }
+
+    const container = docker.getContainer(containers[0].Id);
+    const options = {
+      AttachStdout: false,
+      AttachStderr: false,
+      Cmd: ['nordvpn', 'connect', process.env.CONNECT_OPTION]
+    };
+
+    const exec = await container.exec(options);
+    await new Promise((resolve, reject) => {
+      exec.start((err) => {
+        if (err) return reject(err);
+        resolve();
+      });
+    });
+
+    res.send('NordVPN connected successfully!');
   } catch (error) {
-    console.error('Error recreating container:', error.message);
-    res.status(500).send('Error recreating container');
+    res.status(500).send({
+      service: 'handler',
+      error: error.message,
+    });
   }
 });
+
+
+
 
 
 app.listen(3000, () => {

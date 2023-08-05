@@ -19,7 +19,7 @@ services:
     cap_add:
       - NET_ADMIN
     environment:
-      - NORDVPN_TOKEN=<YOUR NORDVPN TOKEN HERE>
+      NORDVPN_TOKEN : ${NORDVPN_TOKEN}
     networks:
       - proxy-network
 
@@ -29,7 +29,7 @@ services:
     cap_add:
       - NET_ADMIN
     environment:
-      - NORDVPN_TOKEN=<YOUR NORDVPN TOKEN HERE>
+      NORDVPN_TOKEN : ${NORDVPN_TOKEN}
     networks:
       - proxy-network
 

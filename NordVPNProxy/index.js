@@ -14,15 +14,11 @@ app.use('/', async (req, res) => {
   }
   try {
 
-    console.log("RECIEVED REQUEST TO VPN PROXY")
-
     let resp = await axios({
       method: body.method,
       url: url,
       data: body.data ? body.data : null,
     })
-
-    console.log("REQUEST TO VPN PROXY PROCESSED")
 
     res.send(resp.data)
   } catch (error) {
