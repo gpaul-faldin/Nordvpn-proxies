@@ -12,7 +12,7 @@ clear
 
 # Header
 echo -e "${GREEN}--------------------------------------"
-echo -e "      NordVPN Proxy Setup Script      "
+echo -e "      NordVPN-proxies Start Script      "
 echo -e "--------------------------------------${NC}"
 echo ""
 

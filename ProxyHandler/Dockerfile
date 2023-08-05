@@ -24,4 +24,4 @@ ENV CONNECT_OPTION=$CONNECT_OPTION
 EXPOSE 3000
 
 # Serve the app
-CMD ["node", "index.js"]
+CMD ["node", "app.js"]

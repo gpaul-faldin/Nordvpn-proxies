@@ -2,9 +2,10 @@
   "name": "proxyhandler",
   "version": "1.0.0",
   "description": "Proxy handler for the nordvpn Proxy service",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nodemon app.js",
+    "start": "node app.js"
   },
   "author": "Gpaul",
   "license": "ISC",
@@ -12,5 +13,8 @@
     "axios": "^1.4.0",
     "dockerode": "^3.3.5",
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
   }
 }

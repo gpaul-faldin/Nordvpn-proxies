@@ -10,7 +10,7 @@ nordvpn login --token $NORDVPN_TOKEN
 nordvpn whitelist add port 3000
 
 # Connect to a NordVPN server
-nordvpn connect
+nordvpn connect $CONNECT_OPTION
 
 # Start your Express server
 node index.js &

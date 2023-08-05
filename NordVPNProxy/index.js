@@ -4,30 +4,44 @@ const express = require('express')
 const app = express()
 app.use(express.json());
 
-app.use('/', async (req, res) => {
+app.post('/', async (req, res) => {
 
-  const url = req.query.url
-  const body = req.body
+  const url = req.query.url;
+  const body = req.body;
 
   if (!url) {
-    return res.send('url is required')
+    return res.status(400).send('url is required');
   }
-  try {
+  if (!body.method) {
+    return res.status(400).send('method is required');
+  }
 
+  try {
     let resp = await axios({
       method: body.method,
       url: url,
       data: body.data ? body.data : null,
-    })
+    });
 
-    res.send(resp.data)
+    res.status(resp.status).set(resp.headers).send(resp.data);
   } catch (error) {
-    res.send({
+    if (error.response) {
+      return res.status(error.response.status).set(error.response.headers).send(error.response.data);
+    }
+    res.status(500).send({
       service: 'proxy',
       error: error.message,
-    })
+    });
   }
+});
 
-})
+app.get('/fetch-ip', async (req, res) => {
+  const resp = await axios({
+    method: 'GET',
+    url: 'https://ipinfo.io/ip',
+  });
+  return res.send(resp.data);
+});
+
 
 app.listen(3000, () => { console.log('Node.js server is listening on port 3000') })

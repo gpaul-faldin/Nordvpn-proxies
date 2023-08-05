@@ -20,6 +20,7 @@ services:
       - NET_ADMIN
     environment:
       NORDVPN_TOKEN : ${NORDVPN_TOKEN}
+      CONNECT_OPTION : ${CONNECT_OPTION}
     networks:
       - proxy-network
 
@@ -30,6 +31,7 @@ services:
       - NET_ADMIN
     environment:
       NORDVPN_TOKEN : ${NORDVPN_TOKEN}
+      CONNECT_OPTION : ${CONNECT_OPTION}
     networks:
       - proxy-network
 
