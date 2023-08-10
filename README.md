@@ -2,6 +2,10 @@
 
 Empower your development with **Nordvpn-Proxies**, an integrated solution for crafting rotating proxies using a Nordvpn account.
 
+### 🚧 Disclaimer
+
+🔍 Note: This project is still under active development. As it evolves, changes are expected. Please keep this in mind when integrating or deploying in production environments.
+
 ### About
 
 Designed with efficiency at its core, **Nordvpn-Proxies** abstracts the intricacies of proxy rotation, offering a streamlined API interface for directing web traffic and orchestrating connections. Be it enhancing web scraping capabilities, anonymizing data requests, or dispersing traffic for rigorous load testing, **Nordvpn-Proxies** stands as your comprehensive toolkit.
