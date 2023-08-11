@@ -32,7 +32,8 @@ Designed with efficiency at its core, **Nordvpn-Proxies** abstracts the intricac
         "NORDVPN_TOKEN": "TOKEN2",
         "CONNECT_OPTION": "the_americas",
         "COUNT": 2
-      }
+      },
+      ...
     ]
     ```
 
