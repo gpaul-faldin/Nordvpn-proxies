@@ -12,6 +12,8 @@ Designed with efficiency at its core, **Nordvpn-Proxies** abstracts the intricac
 
 🛠 **Features:**
 - **Rotating Proxies:** Transition smoothly between diverse Nordvpn connections.
+- **Ensure different ip:** You will never get the same IP in a row.
+- **Always UP:** A script is used to fetch only working vpn servers with a moderate load.
 - **Intuitive API:** Propel your requests without entangling in proxy configurations.
 - **Enhanced Feedback:** Additional response headers to gain insights on the proxy being used.
 - **Tailorable:** Shape specific Nordvpn connection attributes in line with your requirements.
@@ -87,3 +89,30 @@ Or, delve into a manual setup:
   - `vpn-ip`: External IP of the rotated VPN connection.
 
 💡 Pivot to a fresh proxy and interchange the connection via this endpoint. No request body requisition.
+
+### 3. VPN Server(s) Status
+
+- **Endpoint:** `http://localhost:3000/status`
+- **Method:** `GET`
+
+**Example Response**:
+
+```json
+[
+    {
+        "name": "vpn1",
+        "ip": "",
+        "option": "europe",
+        "ready": true,
+        "pastIps": []
+    },
+    {
+        "name": "vpn2",
+        "ip": "",
+        "option": "the_americas",
+        "ready": true,
+        "pastIps": []
+    },
+    ...
+]
+```
