@@ -36,11 +36,15 @@ app.post('/', async (req, res) => {
 });
 
 app.get('/fetch-ip', async (req, res) => {
-  const resp = await axios({
-    method: 'GET',
-    url: 'https://ipinfo.io/ip',
-  });
-  return res.send(resp.data);
+  try {
+    const resp = await axios({
+      method: 'GET',
+      url: 'https://ipinfo.io/ip',
+    })
+    return res.send(resp.data);
+  } catch (error) {
+    return res.send('')
+  }
 });
 
 

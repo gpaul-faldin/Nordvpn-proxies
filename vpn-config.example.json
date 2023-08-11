@@ -1,0 +1,12 @@
+[
+  {
+    "NORDVPN_TOKEN": "TOKEN1",
+    "CONNECT_OPTION": "europe",
+    "COUNT": 2
+  }
+  {
+    "NORDVPN_TOKEN": "TOKEN2",
+    "CONNECT_OPTION": "the_americas",
+    "COUNT": 2
+  }
+]

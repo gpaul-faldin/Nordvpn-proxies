@@ -10,7 +10,18 @@ nordvpn login --token $NORDVPN_TOKEN
 nordvpn whitelist add port 3000
 
 # Connect to a NordVPN server
-nordvpn connect $CONNECT_OPTION
+while true; do
+    nordvpn connect $CONNECT_OPTION
+    CONNECTION_STATUS=$(nordvpn status | grep -i "Status:")
+
+    if [[ $CONNECTION_STATUS == *"Connected"* ]]; then
+        echo "Successfully connected!"
+        break
+    else
+        echo "Failed to connect, retrying in 60 seconds..."
+        sleep 60
+    fi
+done
 
 # Start your Express server
 node index.js &

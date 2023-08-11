@@ -1,0 +1,26 @@
+version: '3'
+services:
+
+  connection-handler:
+    image: nordcallback
+    container_name: connection-handler
+    networks:
+      - proxy-network
+
+  web:
+    image: proxy-handler
+    container_name: proxy-handler
+    ports:
+      - '3000:3000'
+    networks:
+      - proxy-network
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      {VPN_DEPENDENCIES}
+
+  {VPN_SERVICES}
+
+networks:
+  proxy-network:
+    name: proxy-network
