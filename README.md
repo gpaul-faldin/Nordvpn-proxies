@@ -1,6 +1,6 @@
 # Nordvpn-Proxies 🌐
 
-Empower your development with **Nordvpn-Proxies**, an integrated solution for crafting rotating proxies using a Nordvpn account.
+Empower your development with **Nordvpn-Proxies**, an integrated solution for crafting rotating proxies using a / multiple Nordvpn account(s).
 
 ### 🚧 Disclaimer
 
