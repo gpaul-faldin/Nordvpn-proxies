@@ -18,13 +18,23 @@ Designed with efficiency at its core, **Nordvpn-Proxies** abstracts the intricac
 
 ## 📋 Prerequisites
 
-- Secure your **Nordvpn key**:
-  - Either configure it as an environment variable.
-  - Or, stipulate it directly within the `start.sh` file (line 44).
-  
-- Establish the **CONNECT_OPTION** environment variable:
-  - It serves as the parameter for the `nordvpn connect` command.
-  - Or, delineate it straight in the `start.sh` file (line 45).
+- **Configure your NordVPN Tokens**:
+  - Set up a `vpn-config.json` file based on the provided `vpn-config.example.json`.
+  - The file should look something like this:
+    ```json
+    [
+      {
+        "NORDVPN_TOKEN": "TOKEN1",
+        "CONNECT_OPTION": "europe",
+        "COUNT": 2
+      },
+      {
+        "NORDVPN_TOKEN": "TOKEN2",
+        "CONNECT_OPTION": "the_americas",
+        "COUNT": 2
+      }
+    ]
+    ```
 
 ## 🚀 Getting Started
 
