@@ -116,3 +116,29 @@ Or, delve into a manual setup:
     ...
 ]
 ```
+
+<!-- PORTFOLIO_METADATA_START -->
+<div align="center">
+  <h3>📊 Portfolio Metadata</h3>
+  <p><em>This section is used for automatic project information extraction</em></p>
+</div>
+
+### 📜 Project Overview
+Nordvpn-Proxies is an integrated solution for creating and managing rotating proxies using NordVPN accounts. It abstracts the complexities of proxy rotation, offering a streamlined API interface for directing web traffic and orchestrating connections across multiple VPN servers.
+
+### 🎯 Key Features
+- **Rotating Proxies**: Transition smoothly between diverse NordVPN connections
+- **Ensure Different IP**: Prevents the same IP from being used consecutively
+- **Always UP**: Uses a script to fetch only working VPN servers with moderate load
+- **Intuitive API**: Direct requests without entangling in proxy configurations
+- **Enhanced Feedback**: Additional response headers provide insights on the proxy being used
+- **Tailorable**: Shape specific NordVPN connection attributes to match requirements
+
+### 🛠️ Technology Stack
+- JavaScript
+- Docker
+- Docker Compose
+- Express.js
+- NordVPN CLI
+- HTTP Proxy
+<!-- PORTFOLIO_METADATA_END -->
