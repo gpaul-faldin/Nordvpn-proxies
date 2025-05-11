@@ -129,7 +129,6 @@ Nordvpn-Proxies is an integrated solution for creating and managing rotating pro
 ### 🎯 Key Features
 - **Rotating Proxies**: Transition smoothly between diverse NordVPN connections
 - **Ensure Different IP**: Prevents the same IP from being used consecutively
-- **Always UP**: Uses a script to fetch only working VPN servers with moderate load
 - **Intuitive API**: Direct requests without entangling in proxy configurations
 - **Enhanced Feedback**: Additional response headers provide insights on the proxy being used
 - **Tailorable**: Shape specific NordVPN connection attributes to match requirements
