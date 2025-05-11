@@ -124,7 +124,7 @@ Or, delve into a manual setup:
 </div>
 
 ### 📜 Project Overview
-Nordvpn-Proxies is an integrated solution for creating and managing rotating proxies using NordVPN accounts. It abstracts the complexities of proxy rotation, offering a streamlined API interface for directing web traffic and orchestrating connections across multiple VPN servers.
+Nordvpn-Proxies is an integrated solution for creating and managing rotating proxies using NordVPN accounts. It abstracts the complexities of proxy rotation, offering a streamlined API interface for directing web traffic across multiple VPN servers.
 
 ### 🎯 Key Features
 - **Rotating Proxies**: Transition smoothly between diverse NordVPN connections
